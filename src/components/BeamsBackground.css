@@ -1,0 +1,26 @@
+.beams-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg-darker);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.beams-canvas {
+    position: absolute;
+    inset: 0;
+    filter: blur(15px);
+}
+
+.beams-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-darker);
+    opacity: 0.05;
+    backdrop-filter: blur(50px);
+}
+

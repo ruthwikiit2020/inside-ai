@@ -1,0 +1,50 @@
+.character-reality {
+    background: var(--bg-darker);
+}
+
+.reality-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0.875rem;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.reality-item {
+    display: flex;
+    gap: 0.875rem;
+    margin-bottom: 1.25rem;
+    align-items: flex-start;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.reality-item:last-child {
+    margin-bottom: 0;
+}
+
+.reality-icon {
+    color: var(--primary-light);
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.reality-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+
+.reality-content strong {
+    color: var(--text-primary);
+}
+
+.reality-quote {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 1.75rem;
+    font-size: 0.875rem;
+}

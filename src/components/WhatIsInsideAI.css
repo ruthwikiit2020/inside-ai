@@ -1,0 +1,44 @@
+.what-is {
+    background: var(--bg-darker);
+}
+
+.features-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0.875rem;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    display: flex;
+    gap: 0.875rem;
+    margin-bottom: 1.25rem;
+    align-items: flex-start;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
+}
+
+.feature-icon {
+    color: var(--primary-light);
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+
+@media (max-width: 768px) {
+    .section-description br {
+        display: none;
+    }
+}

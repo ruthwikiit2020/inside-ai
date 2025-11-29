@@ -1,0 +1,55 @@
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    
+    if (!data.email || !data.email.includes('@')) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ 
+          status: 'error',
+          message: 'Invalid email address' 
+        }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    var timestamp = new Date();
+    
+    sheet.appendRow([
+      Utilities.formatDate(timestamp, Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm:ss"),
+      data.email || '',
+      data.role || 'Not specified',
+      data.project || 'Not specified',
+      data.usage || 'Not specified',
+      data.feedback || 'Not specified'
+    ]);
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ 
+        status: 'success',
+        message: 'Thank you for joining!',
+        timestamp: timestamp
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    Logger.log('Error: ' + error.toString());
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ 
+        status: 'error',
+        message: 'Failed to save data. Please try again.' 
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doGet() {
+  return ContentService
+    .createTextOutput(JSON.stringify({ 
+      status: 'success',
+      message: 'Inside AI Form Handler is running!',
+      timestamp: new Date()
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+

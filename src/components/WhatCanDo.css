@@ -1,0 +1,49 @@
+.what-can-do {
+    background: var(--bg-darker);
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.use-case-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0.875rem;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.use-case-card:hover {
+    background: var(--bg-card-hover);
+}
+
+.use-case-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.625rem;
+}
+
+.use-case-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 968px) {
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .use-case-card {
+        padding: 1.5rem;
+    }
+}

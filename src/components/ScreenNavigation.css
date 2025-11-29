@@ -1,0 +1,135 @@
+.screen-navigation {
+    position: relative;
+}
+
+.nav-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.nav-dot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: 0.3;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-dot:hover .nav-circle {
+    opacity: 0.6;
+    transform: scale(1.2);
+}
+
+.nav-dot:hover .nav-circle::before {
+    opacity: 0.15;
+}
+
+.nav-dot.active .nav-circle {
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+}
+
+.nav-dot.active .nav-circle::before {
+    opacity: 0.2;
+    width: 24px;
+    height: 24px;
+}
+
+.nav-progress {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(99, 102, 241, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.nav-progress-bar {
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .nav-dots {
+        gap: 0.5rem;
+    }
+
+    .nav-circle {
+        width: 7px;
+        height: 7px;
+    }
+
+    .nav-dot.active .nav-circle {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+@media (max-width: 968px) {
+    .nav-dots {
+        gap: 0.4rem;
+    }
+
+    .nav-circle {
+        width: 6px;
+        height: 6px;
+    }
+
+    .nav-dot.active .nav-circle {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-dots {
+        gap: 0.35rem;
+    }
+
+    .nav-circle {
+        width: 5px;
+        height: 5px;
+    }
+
+    .nav-dot.active .nav-circle {
+        width: 7px;
+        height: 7px;
+    }
+}
+

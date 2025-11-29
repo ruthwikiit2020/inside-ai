@@ -1,0 +1,244 @@
+.signup {
+    background: var(--bg-darker);
+}
+
+.signup .container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.signup-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signup-header .section-title {
+    margin-bottom: 0.75rem;
+}
+
+.signup-header .section-description {
+    margin-bottom: 0;
+}
+
+.signup-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0.875rem;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.signup-form:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-placeholder {
+    visibility: hidden;
+}
+
+.form-submit {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit {
+    min-width: 400px;
+    padding: 1rem 2.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.625rem;
+    font-size: 0.875rem;
+    min-height: 20px;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--bg-darker);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.875rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--bg-dark);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1), 0 4px 12px rgba(99, 102, 241, 0.15);
+    transform: translateY(-2px);
+}
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group select:hover {
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.form-group input,
+.form-group select {
+    height: 44px;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 85px;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Success Message */
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-card);
+    border: 1px solid var(--primary);
+    border-radius: 0.875rem;
+    padding: 2.5rem;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: fadeInScale 0.3s ease-out;
+}
+
+.success-icon {
+    width: 54px;
+    height: 54px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: white;
+    margin: 0 auto 1.25rem;
+}
+
+.success-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.success-content p {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+}
+
+.success-content p:last-child {
+    margin-bottom: 0;
+}
+
+.success-note {
+    font-size: 0.8125rem !important;
+    color: var(--text-muted) !important;
+}
+
+.form-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.875rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-error p {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@media (max-width: 968px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-placeholder {
+        display: none;
+    }
+
+    .signup-form {
+        padding: 2rem;
+    }
+
+    .form-group textarea {
+        height: 70px;
+    }
+
+    .btn-submit {
+        min-width: 100%;
+    }
+
+    .form-submit {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .signup-header .section-description br {
+        display: none;
+    }
+
+    .signup-form {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        gap: 0.875rem;
+        margin-bottom: 0.875rem;
+    }
+}
+

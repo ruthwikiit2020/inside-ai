@@ -1,0 +1,27 @@
+.early-access {
+    text-align: center;
+    background: var(--bg-darker);
+}
+
+.early-access-status {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.early-access-status strong {
+    color: var(--text-primary);
+}
+
+.early-access-cta {
+    color: var(--primary-light);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .early-access-status br {
+        display: none;
+    }
+}

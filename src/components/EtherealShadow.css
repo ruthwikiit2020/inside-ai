@@ -1,0 +1,26 @@
+.ethereal-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.4;
+}
+
+.ethereal-shadow-inner {
+    will-change: filter;
+}
+
+.ethereal-shadow-mask {
+    will-change: transform;
+}
+
+.ethereal-shadow-noise {
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+

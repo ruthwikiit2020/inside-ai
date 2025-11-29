@@ -1,0 +1,59 @@
+.dock-navigation {
+    position: relative;
+    max-width: 100%;
+    pointer-events: auto;
+}
+
+.dock-navigation-header {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dock-navigation-items {
+    pointer-events: auto;
+}
+
+.dock-navigation-item {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.2s ease;
+}
+
+.dock-navigation-item:hover {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: var(--primary);
+}
+
+.dock-navigation-header .dock-navigation-item {
+    background: rgba(30, 41, 59, 0.3);
+}
+
+.dock-nav-icon {
+    width: 100%;
+    height: 100%;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.dock-navigation-item:hover .dock-nav-icon {
+    color: var(--primary-light);
+}
+
+/* Mobile adjustments */
+@media (max-width: 968px) {
+    .dock-navigation-header {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .dock-navigation-header .dock-panel {
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+}
+

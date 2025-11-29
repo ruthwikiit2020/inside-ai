@@ -1,0 +1,37 @@
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    
+    var email = e.parameter.email || '';
+    var role = e.parameter.role || 'Not specified';
+    var project = e.parameter.project || 'Not specified';
+    var usage = e.parameter.usage || 'Not specified';
+    var feedback = e.parameter.feedback || 'Not specified';
+    
+    if (!email || !email.includes('@')) {
+      return ContentService.createTextOutput('Invalid email');
+    }
+    
+    var timestamp = new Date();
+    
+    sheet.appendRow([
+      Utilities.formatDate(timestamp, Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm:ss"),
+      email,
+      role,
+      project,
+      usage,
+      feedback
+    ]);
+    
+    return ContentService.createTextOutput('Success');
+      
+  } catch (error) {
+    Logger.log('Error: ' + error.toString());
+    return ContentService.createTextOutput('Error: ' + error.toString());
+  }
+}
+
+function doGet() {
+  return ContentService.createTextOutput('Inside AI Form Handler is running!');
+}
+

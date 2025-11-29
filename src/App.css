@@ -1,0 +1,89 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+  cursor: none;
+}
+
+@media (max-width: 968px) {
+  .App {
+    cursor: auto;
+  }
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* Section Styles - Full Screen Sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title em {
+    font-style: italic;
+    color: var(--primary-light);
+}
+
+.section-description {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-description {
+        font-size: 0.9375rem;
+    }
+
+    section {
+        scroll-snap-align: start;
+    }
+}
+
+@media (max-width: 768px) {
+    .App {
+        scroll-snap-type: none;
+        height: auto;
+    }
+
+    section {
+        min-height: auto;
+        scroll-snap-align: none;
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
