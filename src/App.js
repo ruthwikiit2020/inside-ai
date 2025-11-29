@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import { DepthLayers } from './components/DepthLayers';
 import { BeamsBackground } from './components/BeamsBackground';
 import { EtherealShadow } from './components/EtherealShadow';
 import InteractiveCursor from './components/InteractiveCursor';
 import ScrollIndicator from './components/ScrollIndicator';
 import MouseGlow from './components/MouseGlow';
+import WhatsAppButton from './components/WhatsAppButton';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
@@ -23,10 +25,12 @@ function App() {
       <ScrollIndicator />
       <InteractiveCursor />
       <MouseGlow />
+      <WhatsAppButton />
+      <DepthLayers />
       <EtherealShadow
-        color="rgba(99, 102, 241, 0.6)"
-        animation={{ scale: 80, speed: 85 }}
-        noise={{ opacity: 0.6, scale: 1.5 }}
+        color="rgba(99, 102, 241, 0.8)"
+        animation={{ scale: 100, speed: 90 }}
+        noise={{ opacity: 1, scale: 1.2 }}
         sizing="fill"
       />
       <BeamsBackground intensity="medium" />

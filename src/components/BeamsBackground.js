@@ -18,17 +18,17 @@ function createBeam(width, height) {
     };
 }
 
+const OPACITY_MAP = {
+    subtle: 0.5,
+    medium: 0.7,
+    strong: 1,
+};
+
 export function BeamsBackground({ intensity = "medium" }) {
     const canvasRef = useRef(null);
     const beamsRef = useRef([]);
     const animationFrameRef = useRef(0);
     const MINIMUM_BEAMS = 15;
-
-    const opacityMap = {
-        subtle: 0.5,
-        medium: 0.7,
-        strong: 1,
-    };
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -36,6 +36,8 @@ export function BeamsBackground({ intensity = "medium" }) {
 
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
+
+        const intensityOpacity = OPACITY_MAP[intensity];
 
         const updateCanvasSize = () => {
             const dpr = window.devicePixelRatio || 1;
@@ -80,7 +82,7 @@ export function BeamsBackground({ intensity = "medium" }) {
             const pulsingOpacity =
                 beam.opacity *
                 (0.8 + Math.sin(beam.pulse) * 0.2) *
-                opacityMap[intensity];
+                intensityOpacity;
 
             const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
 
